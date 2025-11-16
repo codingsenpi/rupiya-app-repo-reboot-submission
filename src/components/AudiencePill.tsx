@@ -4,7 +4,7 @@ import React from 'react';
 
 export const AUDIENCES = ['Farmer', 'FPO', 'Buyer', 'Investor'] as const;
 
-type Audience = typeof AUDIENCES[number];
+export type Audience = typeof AUDIENCES[number];
 
 interface AudiencePillProps {
   activeAudience: Audience;

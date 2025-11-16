@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import AudiencePill, { AUDIENCES } from '@/components/AudiencePill';
+import AudiencePill, { AUDIENCES, Audience } from '@/components/AudiencePill';
 import DynamicValueSection from '@/components/DynamicValueSection';
 import CarbonCreditVisualizer from '@/components/CarbonCreditVisualizer';
 import EcosystemFlow from '@/components/EcosystemFlow';
 import FutureVision from '@/components/FutureVision';
 
 export default function RupiyaHomePage() {
-    const [activeAudience, setActiveAudience] = useState(AUDIENCES[0]);
+    const [activeAudience, setActiveAudience] = useState<Audience>(AUDIENCES[0]);
 
     return (
         <div className="bg-gradient-to-br from-emerald-50 to-teal-100 min-h-screen text-slate-800">
