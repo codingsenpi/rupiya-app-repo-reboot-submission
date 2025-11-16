@@ -2,9 +2,16 @@
 
 import React from 'react';
 
-export const AUDIENCES = ['Farmer', 'FPO', 'Buyer', 'Investor'];
+export const AUDIENCES = ['Farmer', 'FPO', 'Buyer', 'Investor'] as const;
 
-const AudiencePill = ({ activeAudience, setActiveAudience }) => (
+type Audience = typeof AUDIENCES[number];
+
+interface AudiencePillProps {
+  activeAudience: Audience;
+  setActiveAudience: (audience: Audience) => void;
+}
+
+const AudiencePill: React.FC<AudiencePillProps> = ({ activeAudience, setActiveAudience }) => (
     <div className="relative flex items-center p-1.5 bg-white/80 backdrop-blur-sm rounded-full shadow-inner shadow-slate-200">
         {AUDIENCES.map((audience) => (
             <button
